@@ -34,6 +34,7 @@ const applicationSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 // Ensure unique indexes for quick duplicate checks at the DB level
+applicationSchema.index({ rollNo: 1 }, { unique: true });
 applicationSchema.index({ phone: 1 }, { unique: true });
 applicationSchema.index({ email: 1 }, { unique: true });
 
