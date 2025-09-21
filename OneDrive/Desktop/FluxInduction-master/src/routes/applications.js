@@ -83,6 +83,8 @@ const applicationSchema = Joi.object({
   weaknesses: Joi.alternatives().try(Joi.array().items(Joi.string()), Joi.string()).optional(),
   projectLink: Joi.string().uri().optional(),
   imageUrl: Joi.string().uri().required(),
+  githubProfile: Joi.string().uri().allow('').optional(),
+  residence: Joi.string().min(1).max(200).optional(),
 });
 
 // Create application
@@ -117,6 +119,8 @@ router.post('/', async (req, res) => {
       weaknesses,
       projectLink: value.projectLink || '',
       imageUrl: value.imageUrl,
+      githubProfile: value.githubProfile || '',
+      residence: value.residence || '',
     });
     const saved = await app.save();
     res.status(201).json(saved);

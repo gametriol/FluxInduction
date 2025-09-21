@@ -35,6 +35,8 @@ const applicationSchema = new mongoose.Schema({
   weaknesses: { type: [String], default: [] },
   projectLink: { type: String, trim: true, default: '' },
   imageUrl: { type: String, required: true, trim: true },
+  githubProfile: { type: String, trim: true, default: '' },
+  residence: { type: String, trim: true, default: '' },
 }, { timestamps: true });
 
 // Ensure unique indexes for quick duplicate checks at the DB level
