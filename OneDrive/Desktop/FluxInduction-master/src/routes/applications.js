@@ -87,7 +87,7 @@ const applicationSchema = Joi.object({
   residence: Joi.string().min(1).max(200).optional(),
 });
 
-// Create application
+// Create application lmao ded
 router.post('/', async (req, res) => {
   console.log("📩 Incoming body:", req.body);
 
